@@ -1,6 +1,6 @@
 # T07D10 
 
-![This day will help you get acquainted with dynamic memory allocation, matrices (or multidimensional array) and their processing algorithms.](misc/rus/images/day7_door.png)
+![day7_door](misc/rus/images/day7_door.png)
 
 
 ## Contents
