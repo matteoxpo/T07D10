@@ -1,6 +1,8 @@
 # T07D10 
 The russian version of the task can be found in the repository.
 
+You can find some useful video materials [here](https://edu.21-school.ru/video/selection/644840f1-6903-41fa-953c-97ee0247787b).
+
 ![day7_door](misc/eng/images/day7_door.png)
 
 
@@ -101,6 +103,14 @@ Nothing has been found. There's nothing else you can do but turn on the computer
 
 \> *Turn on the computer*
 
+The text pops up on the screen on the 25th frame:
+> Don't forget to check your programs for style norms and memory leaks! \
+> Don't forget to check your programs for style norms and memory leaks! \
+> Don't forget to check your programs for style norms and memory leaks! \
+> Check out ' materials` more often.....
+
+The AI clearly has a fad for these tests.
+
 ***LOADING...***
 
 
@@ -112,7 +122,15 @@ Having loaded the room's repository out of habit, you once again notice the shee
 You need to supplement and rewrite the program for array sorting from the previous room (src/sort.c) with dynamic allocation of memory for the array (using the malloc or calloc function). The length of the array n is specified by the user before the input. \
 Put the modified program in src/sort.c. Let it be there, just in case.
 
-***== Quest 1 received. Modify the src/sort.c program from the previous room to allocate the memory for the array dynamically (using the malloc or calloc function). The length of the array `n` is specified in stdin prior to inputting the array. ==***
+***== Quest 1 received. Modify the src/sort.c program from the previous room to 
+allocate the memory for the array dynamically (using the malloc or calloc function).
+The length of the array `n` is specified in stdin prior to inputting the array.
+In case of any error, output "n/a". There should be no line break character at 
+the end of the output==***
+
+| Input | Output |
+| ------ | ------ |
+| 10<br/>4 3 9 0 1 2 100 2 7 -1 | -1 0 1 2 2 3 4 7 9 100 |
 
 | Input | Output |
 | ------ | ------ |
@@ -154,6 +172,10 @@ You are waiting for an answer from the AI but don't receive one. Perhaps you sho
 
 ***== Quest 2 received. Create an src/sort_no_leak.c program to fix the memory leak in the src/sort.c program. If there was no leak in the first place, then shrug the shoulders and copy src/sort.c to src/sort_no_leak.c. ==***
 
+| Input | Output |
+| ------ | ------ |
+| 10<br/>4 3 9 0 1 2 100 2 7 -1 | -1 0 1 2 2 3 4 7 9 100 |
+
 ***LOADING...***
 
 
@@ -192,7 +214,24 @@ The AI is still silent.
 
 "What a long list of requirements", you think to yourself. The appetite of the AI is growing by leaps and bounds. Well, it's a good way to practice anyway.
 
-***== Quest 3 received. Add the src/matrix.c program that inputs and outputs integer matrices. Matrix memory allocation must be implemented in 4 types: one static and 3 dynamic ones. For static memory allocation, the maximum size of the matrix does not exceed 100 x 100. To select the method of memory allocation in the program, you need to implement the menu with subparagraphs 1–4. The size of the matrix is taken from two numbers in stdin right before its input. Input and output functions should not depend on the method of memory allocation: the work with matrices should be conducted using a double pointer. You also need to clean up all allocated memory. Refer to the materials folder for help. ==***
+***== Quest 3 received. Add the src/matrix.c program that inputs 
+and outputs integer matrices. Matrix memory allocation must be implemented in 
+4 types: one static and 3 dynamic ones. For static memory allocation, the 
+maximum size of the matrix does not exceed 100 x 100. To select the method 
+of memory allocation in the program, you need to implement the menu with 
+subparagraphs 1–4. The size of the matrix is taken from two numbers in stdin 
+right before its input. Input and output functions should not depend on the 
+method of memory allocation: the work with matrices should be conducted using 
+a double pointer. You also need to clean up all allocated memory. Refer to the 
+materials folder for help. Pay attention to the output of the matrix:
+there should be no extra spaces at the end of each line. There should not be a 
+newline break character after the last line. In case of any error, output "n/a". ==***
+
+
+| Input | Output |
+| ------ | ------ |
+| 2<br>2 2<br>4 3<br>9 0 | 4 3<br>9 0 |
+
 
 | Input | Output |
 | ------ | ------ |
@@ -209,7 +248,18 @@ Having spent a decent amount of time writing the code for matrix input and outpu
 >I hope you don’t destroy what you’ve done so far. Because that would be such a shame.. \
 >A shame.
 
-***== Quest 4 received. Add the src/matrix_extended.c program, which expands the functionality of the src/matrix.c program. You need to calculate the maximum elements of the matrix in each of its rows and the minimum elements in each of its columns and output these values ​​at the end after the output of the matrix as two arrays (an array of maximum elements in each row and an array of minimum elements in each column). ==***
+***== Quest 4 received. Add the src/matrix_extended.c program, which expands 
+the functionality of the src/matrix.c program. You need to calculate the maximum 
+elements of the matrix in each of its rows and the minimum elements in each of 
+its columns and output these values ​​at the end after the output of the 
+matrix as two arrays (an array of maximum elements in each row and an 
+array of minimum elements in each column). Also note: no hyphenation 
+characters after the last line(!)==***
+
+| Input | Output |
+| ------ | ------ |
+| 2<br>3 3<br>4 3 1<br>9 0 55<br>-4 7 111 | 4 3 1<br>9 0 55<br>-4 7 111<br>4 55 111<br>-4 0 1 |
+
 
 | Input | Output |
 | ------ | ------ |
@@ -289,7 +339,17 @@ You should try to use the pre-defined arrays to create a new matrix where this p
 
     Not, it's not for video games.
 
-***== Quest 6 received. Add an src/matrix_sort.c program that sorts the given matrix, putting rows with the minimum sum of elements first, followed by rows with the maximum sum of elements. Input data for the program are numbers N and M – matrix dimensions, and NxM of the numbers – matrix elements. The memory for the matrix must be allocated dynamically using one of the 3 methods. And it has to be cleared at the end of the program. ==***
+***== Quest 6 received. Add an src/matrix_sort.c program that sorts the given 
+matrix, putting rows with the minimum sum of elements first, followed by rows 
+with the maximum sum of elements. Input data for the program are numbers N 
+and M – matrix dimensions, and NxM of the numbers – matrix elements. The memory 
+for the matrix must be allocated dynamically using one of the 3 methods. And it 
+has to be cleared at the end of the program. In case of any error, output "n/a".==***
+
+| Input | Output |
+| ------ | ------ |
+| 1<br>3 3<br>4 3 1<br>9 0 55<br>-4 7 -10 | -4 7 -10<br>4 3 1<br>9 0 55 |
+
 
 | Input | Output |
 | ------ | ------ |
@@ -316,7 +376,15 @@ You should try to use the pre-defined arrays to create a new matrix where this p
     2 is multiplication, and 3 is transpose. After that I will give you all the information you need. 
     By the way, did you know that we calculate your favorite neural networks to be matrix multiplication?
 
-***== Quest 7 received. Add an src/matrix_arithmetic.c program that performs one of the three operations: 1 – addition of two matrices, 2 – multiplication, or 3 – transpose. The code of the respective operation must be input before inputting the dimensions and matrices. Matrices, as before, are integer-valued. If it's not possible to perform the operation, output "n/a". ==***
+***== Quest 7 received. Add an src/matrix_arithmetic.c program that performs one of 
+the three operations: 1 – addition of two matrices, 2 – multiplication, or 
+3 – transpose. The code of the respective operation must be input before 
+inputting the dimensions and matrices. Matrices, as before, are integer-valued.
+In case of any error, output "n/a". ==***
+
+| Input | Output |
+| ------ | ------ |
+| 1<br>2 2<br>4 3<br>9 0<br>2 2<br>1 1<br>2 2 | 5 4<br>11 2 |
 
 | Input | Output |
 | ------ | ------ |
