@@ -132,10 +132,6 @@ the end of the output==***
 | ------ | ------ |
 | 10<br/>4 3 9 0 1 2 100 2 7 -1 | -1 0 1 2 2 3 4 7 9 100 |
 
-| Input | Output |
-| ------ | ------ |
-| 10<br/>4 3 9 0 1 2 100 2 7 -1 | -1 0 1 2 2 3 4 7 9 100 |
-
 ***LOADING...***
 
 
@@ -219,7 +215,7 @@ and outputs integer matrices. Matrix memory allocation must be implemented in
 4 types: one static and 3 dynamic ones. For static memory allocation, the 
 maximum size of the matrix does not exceed 100 x 100. To select the method 
 of memory allocation in the program, you need to implement the menu with 
-subparagraphs 1–4. The size of the matrix is taken from two numbers in stdin 
+subparagraphs 1–4. The size of the matrix (first the number of rows, then the columns) is taken from two numbers in stdin 
 right before its input. Input and output functions should not depend on the 
 method of memory allocation: the work with matrices should be conducted using 
 a double pointer. You also need to clean up all allocated memory. Refer to the 
@@ -232,10 +228,6 @@ newline break character after the last line. In case of any error, output "n/a".
 | ------ | ------ |
 | 2<br>2 2<br>4 3<br>9 0 | 4 3<br>9 0 |
 
-
-| Input | Output |
-| ------ | ------ |
-| 2<br/>2 2<br/>4 3<br/>9 0 | 4 3<br/>9 0 |
 
 ***LOADING...***
 
@@ -260,10 +252,6 @@ characters after the last line(!)==***
 | ------ | ------ |
 | 2<br>3 3<br>4 3 1<br>9 0 55<br>-4 7 111 | 4 3 1<br>9 0 55<br>-4 7 111<br>4 55 111<br>-4 0 1 |
 
-
-| Input | Output |
-| ------ | ------ |
-| 2<br/>3 3<br/>4 3 1<br/>9 0 55<br/>-4 7 111 | 4 3 1<br/>9 0 55<br/>-4 7 111<br/>4 55 111<br/>-4 0 1 |
 
 ***LOADING...***
 
@@ -351,10 +339,6 @@ has to be cleared at the end of the program. In case of any error, output "n/a".
 | 1<br>3 3<br>4 3 1<br>9 0 55<br>-4 7 -10 | -4 7 -10<br>4 3 1<br>9 0 55 |
 
 
-| Input | Output |
-| ------ | ------ |
-| 3 3<br/>4 3 1<br/>9 0 55<br/>-4 7 -10 | -4 7 -10<br/>4 3 1<br/>9 0 55 |
-
 ***LOADING...***
 
 
@@ -384,13 +368,10 @@ In case of any error, output "n/a". ==***
 
 | Input | Output |
 | ------ | ------ |
-| 1<br>2 2<br>4 3<br>9 0<br>2 2<br>1 1<br>2 2 | 5 4<br>11 2 |
-
-| Input | Output |
-| ------ | ------ |
 | 1<br/>2 2<br/>4 3<br/>9 0<br/>2 2<br/>1 1<br/>2 2 | 5 4<br/>11 2 |
-| 2<br/>2 3<br/>4 3 1<br/>9 0 2<br/>3 1<br/>1<br/>2<br/>3 | 5 4<br/>11 2 |
+| 2<br/>2 3<br/>4 3 1<br/>9 0 2<br/>3 1<br/>1<br/>2<br/>3 | 13<br/>6 |
 | 3<br/>2 2<br/>4 3<br/>9 0 | 4 9<br/>3 0 |
+
 
 ***LOADING...***
 
