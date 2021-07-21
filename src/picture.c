@@ -20,7 +20,12 @@ void make_picture(int **picture, int n, int m)
    int frame_h[] = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
    int tree_trunk[] = { 7, 7, 7, 7 };
    int tree_foliage[] = { 3, 3, 3, 3 };
-   int sun_data[3][3] = { { 6, 6, 6 }, { 0, 6, 6 }, { 6, 0, 6 } };
+   int sun_data[6][5] = { { 0, 6, 6, 6, 6 }, 
+                          { 0, 0, 6, 6, 6 }, 
+                          { 0, 0, 6, 6, 6 },
+                          { 0, 6, 0, 0, 6 },
+                          { 0, 0, 0, 0, 0 },
+                          { 0, 0, 0, 0, 0 } };
 
    reset_picture(picture, n, m);
 
