@@ -196,7 +196,7 @@ The AI is still silent.
     It's obviously about organizing arrays and arrays of pointers. You can search your favorite repository 
     for hints, if nothing comes to mind. We've had some pictures here related to this.
     Naturally, the design of all other functions should make them independent from the method of allocating 
-    the memory. Note copy-paste, make rm -rf for your entire repository. 
+    the memory. If I notice copy-pasting, I will rm -rf your entire repository. 
     The size of the matrix must be taken from two numbers in stdin.
 
     Oh yes, I almost forgot (just joking, I can't forget anything): the choice of the method for creating the matrix 
