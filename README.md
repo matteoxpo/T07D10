@@ -92,8 +92,8 @@ You page through the remaining pile of empty and partially scribbled sheets of p
 ```void *calloc(size_t n, size_t size)``` 
 >returns the pointer to an area large enough to store an array of n objects of the specified size, or NULL if the request cannot be satisfied. The allocated memory is set to zeroes by calloc. 
 >The pointer returned by malloc and calloc will be given with the alignment performed according to the specified object type. However, it can be cast to the appropriate type like in the following code fragment: 
->```int *ip; ip = (int*) calloc(n, sizeof(int));```
->Functi n   e
+
+>```int *ip;```<br/>```ip = (int*) calloc(n, sizeof(int));```
 
 Unfortunately, it seems like the remaining text has not been printed properly. Or faded with age. Technologies of the past... fail.
 
