@@ -216,9 +216,7 @@ and outputs integer matrices. Matrix memory allocation must be implemented in
 maximum size of the matrix does not exceed 100 x 100. To select the method 
 of memory allocation in the program, you need to implement the menu with 
 subparagraphs 1–4. The size of the matrix (first the number of rows, then the columns) is taken from two numbers in stdin 
-right before its input. Input and output functions should not depend on the 
-method of memory allocation: the work with matrices should be conducted using 
-a double pointer. You also need to clean up all allocated memory. Refer to the 
+right before its input. You also need to clean up all allocated memory. Refer to the 
 materials folder for help. Pay attention to the output of the matrix:
 there should be no extra spaces at the end of each line. There should not be a 
 newline break character after the last line. In case of any error, output "n/a". ==***
@@ -283,7 +281,7 @@ You record the new changes in the repository and wait for the AI to "suddenly" t
 Still silence. Looks like the AI's strategy for today is about ignoring you. Inside src/picture.c, you see several arrays and matrices that consist of ones, sevens, sixes and threes, as well as some kind of processing for them in a cycle. You accidentally turn to a strange picture hanging on the wall nearby. Is that what the AI wanted to recreate using this module? \
 You should try to use the pre-defined arrays to create a new matrix where this picture will be "drawn". And remember to output the final matrix. 
 
-***== Quest 5 received. Modify the src/picture.c program so it recreates the picture from the wall in the terminal using arrays and matrices from the code. You are not allowed to change static arrays or matrices. ==***
+***== Quest 5 received. Modify the src/picture.c program so it recreates the picture from [the room wall](#level-2-room-3) in the terminal using arrays and matrices from the code. You are not allowed to change static arrays or matrices. ==***
 
 ***LOADING...***
 
