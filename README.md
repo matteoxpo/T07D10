@@ -243,7 +243,7 @@ the functionality of the src/matrix.c program. You need to calculate the maximum
 elements of the matrix in each of its rows and the minimum elements in each of 
 its columns and output these values ​​at the end after the output of the 
 matrix as two arrays (an array of maximum elements in each row and an 
-array of minimum elements in each column). Also note: no hyphenation 
+array of minimum elements in each column). The first number is the number of the memory allocation method. Also note: no hyphenation 
 characters after the last line(!)==***
 
 | Input | Output |
