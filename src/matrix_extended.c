@@ -14,17 +14,32 @@ int dynamic_var3(int ***a, int *n, int *m, int **val_arr);
 
 int symbolCorrect(char symbol);
 int sizeCorrect(int s);
+
+void minSeq(int **a, int n, int m, int **res);
+void maxSeq(int **a, int n, int m, int **res);
+void minSeqS(int a[][ArrSize], int n, int m, int **res);
+void maxSeqS(int a[][ArrSize], int n, int m, int **res);
+void outpu1(int *a, int n);
+
 int main() {
   int staticMas[ArrSize][ArrSize];
   int **dynamicMas;
   int n = 0, m = 0;
   int command;
   int *val_arr;
+  int *res;
   if (scanf("%d", &command)) {
     switch (command) {
       case 1:
         if (stat(staticMas, &n, &m)) {
           output_static(staticMas, n, m);
+          printf("\n");
+          maxSeqS(staticMas, n, m, &res);
+          outpu1(res, m);
+          free(res);
+          printf("\n");
+          minSeqS(staticMas, n, m, &res);
+          outpu1(res, n);
         } else {
           printf("n/a");
         }
@@ -32,6 +47,15 @@ int main() {
       case 2:
         if (dynamic_var1(&dynamicMas, &n, &m)) {
           output(dynamicMas, n, m);
+          printf("\n");
+          maxSeq(dynamicMas, n, m, &res);
+          outpu1(res, m);
+          free(res);
+          printf("\n");
+          minSeq(dynamicMas, n, m, &res);
+          outpu1(res, n);
+
+          free(res);
           free(dynamicMas);
         } else {
           if (n != 0 && m != 0) free(dynamicMas);
@@ -41,6 +65,15 @@ int main() {
       case 3:
         if (dynamic_var2(&dynamicMas, &n, &m)) {
           output(dynamicMas, n, m);
+          printf("\n");
+          maxSeq(dynamicMas, n, m, &res);
+          outpu1(res, m);
+          free(res);
+          printf("\n");
+          minSeq(dynamicMas, n, m, &res);
+          outpu1(res, n);
+
+          free(res);
           for (int i = 0; i < n; i++) free(dynamicMas[i]);
           free(dynamicMas);
 
@@ -52,6 +85,14 @@ int main() {
       case 4:
         if (dynamic_var3(&dynamicMas, &n, &m, &val_arr)) {
           output(dynamicMas, n, m);
+          maxSeq(dynamicMas, n, m, &res);
+          outpu1(res, m);
+          free(res);
+          printf("\n");
+          minSeq(dynamicMas, n, m, &res);
+          outpu1(res, n);
+
+          free(res);
           free(dynamicMas);
           free(val_arr);
         } else {
@@ -118,6 +159,7 @@ void output(int **a, int n, int m) {
     if (i != n - 1) printf("\n");
   }
 }
+
 int input(int ***a, int n, int m) {
   char symbol;
   int el;
@@ -182,4 +224,57 @@ int dynamic_var3(int ***a, int *n, int *m, int **val_arr) {
     check = 0;
   }
   return check;
+}
+
+void maxSeq(int **a, int n, int m, int **res) {
+  (*res) = (int *)malloc(n * sizeof(int));
+  for (int i = 0; i < n; i++) {
+    int max = a[i][0];
+    for (int j = 0; j < m; j++) {
+      if (a[i][j] > max) max = a[i][j];
+    }
+    (*res)[i] = max;
+  }
+}
+
+void minSeq(int **a, int n, int m, int **res) {
+  (*res) = (int *)malloc(m * sizeof(int));
+  for (int j = 0; j < m; j++) {
+    int min = a[0][j];
+    for (int i = 0; i < n; i++) {
+      if (a[i][j] < min) min = a[i][j];
+    }
+    (*res)[j] = min;
+  }
+}
+
+void maxSeqS(int a[][ArrSize], int n, int m, int **res) {
+  (*res) = (int *)malloc(n * sizeof(int));
+  for (int i = 0; i < n; i++) {
+    int max = a[i][0];
+    for (int j = 0; j < m; j++) {
+      if (a[i][j] > max) max = a[i][j];
+    }
+    (*res)[i] = max;
+  }
+}
+
+void minSeqS(int a[][ArrSize], int n, int m, int **res) {
+  (*res) = (int *)malloc(m * sizeof(int));
+  for (int j = 0; j < m; j++) {
+    int min = a[0][j];
+    for (int i = 0; i < n; i++) {
+      if (a[i][j] < min) min = a[i][j];
+    }
+    (*res)[j] = min;
+  }
+}
+
+void outpu1(int *a, int n) {
+  for (int i = 0; i < n; i++) {
+    if (i != n - 1)
+      printf("%d ", a[i]);
+    else
+      printf("%d", a[i]);
+  }
 }
