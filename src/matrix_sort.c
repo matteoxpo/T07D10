@@ -151,7 +151,6 @@ int dynamic_var3(int ***a, int *n, int *m, int **val_arr) {
 }
 
 void matrix_sort(int **a, int n, int m) {
-  int min = sum(a, 0, m);
   for (int i = 0; i < n; i++) {
     for (int j = 0; j < n; j++) {
       if (sum(a, j, m) > sum(a, i, m)) swap(a, i, j);

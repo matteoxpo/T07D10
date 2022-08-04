@@ -29,10 +29,7 @@ void make_picture(int **picture, int n, int m) {
 
   int length_frame_w = sizeof(frame_w) / sizeof(frame_w[0]);
   int length_frame_h = sizeof(frame_h) / sizeof(frame_h[0]);
-  for (int j = 2; j < 6; j++) {
-    // picture[j][3] = tree_foliage[j - 2];
-    // picture[j][4] = tree_foliage[j - 2];
-  }
+
   for (int j = 6; j < 10; j++) {
     picture[j - 4][3] = tree_foliage[j - 6];
     picture[j - 4][4] = tree_foliage[j - 6];
@@ -64,7 +61,6 @@ void make_picture(int **picture, int n, int m) {
   for (int i = 0; i < length_frame_w; i++) {
     picture[0][i] = frame_w[i];
   }
-  // output(picture, N, M);
 }
 
 void reset_picture(int **picture, int n, int m) {
@@ -87,7 +83,7 @@ void output(int **a, int n, int m) {
       if (j != m - 1)
         printf("%d ", a[i][j]);
       else
-        ptintf("%d", a[i][j]);
+        printf("%d", a[i][j]);
     }
     if (i != n - 1) printf("\n");
   }
