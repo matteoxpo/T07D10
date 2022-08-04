@@ -2,8 +2,6 @@
 #include <stdlib.h>
 
 #define ArrSize 100
-void output_static(int a[][ArrSize], int n, int m);
-int stat(int a[][ArrSize], int *n, int *m);
 
 int input(int ***a, int n, int m);  // dynamic only
 void output(int **a, int n, int m);
@@ -18,8 +16,8 @@ int sum(int **a, int i, int m);
 
 int symbolCorrect(char symbol);
 int sizeCorrect(int s);
+
 int main() {
-  int staticMas[ArrSize][ArrSize];
   int **dynamicMas;
   int n = 0, m = 0;
   int command;
@@ -73,7 +71,7 @@ int main() {
 int symbolCorrect(char symbol) {
   return symbol == ' ' || symbol == '\n' || symbol == EOF ? 1 : 0;
 }
-int sizeCorrect(int s) { return s > 0 && s < ArrSize + 1 ? 1 : 0; }
+int sizeCorrect(int s) { return s > 0 ? 1 : 0; }
 
 void output(int **a, int n, int m) {
   for (int i = 0; i < n; i++) {
