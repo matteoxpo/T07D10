@@ -12,6 +12,10 @@ int dynamic_var1(int ***a, int *n, int *m);
 int dynamic_var2(int ***a, int *n, int *m);
 int dynamic_var3(int ***a, int *n, int *m, int **val_arr);
 
+void matrix_sort(int **a, int n, int m);
+void swap(int **a, int i, int j);
+int sum(int **a, int i, int m);
+
 int symbolCorrect(char symbol);
 int sizeCorrect(int s);
 int main() {
@@ -23,14 +27,8 @@ int main() {
   if (scanf("%d", &command)) {
     switch (command) {
       case 1:
-        if (stat(staticMas, &n, &m)) {
-          output_static(staticMas, n, m);
-        } else {
-          printf("n/a");
-        }
-        break;
-      case 2:
         if (dynamic_var1(&dynamicMas, &n, &m)) {
+          matrix_sort(dynamicMas, n, m);
           output(dynamicMas, n, m);
           free(dynamicMas);
         } else {
@@ -38,9 +36,11 @@ int main() {
           printf("n/a");
         }
         break;
-      case 3:
+      case 2:
         if (dynamic_var2(&dynamicMas, &n, &m)) {
+          matrix_sort(dynamicMas, n, m);
           output(dynamicMas, n, m);
+
           for (int i = 0; i < n; i++) free(dynamicMas[i]);
           free(dynamicMas);
 
@@ -49,8 +49,9 @@ int main() {
           printf("n/a");
         }
         break;
-      case 4:
+      case 3:
         if (dynamic_var3(&dynamicMas, &n, &m, &val_arr)) {
+          matrix_sort(dynamicMas, n, m);
           output(dynamicMas, n, m);
           free(dynamicMas);
           free(val_arr);
@@ -73,39 +74,6 @@ int symbolCorrect(char symbol) {
   return symbol == ' ' || symbol == '\n' || symbol == EOF ? 1 : 0;
 }
 int sizeCorrect(int s) { return s > 0 && s < ArrSize + 1 ? 1 : 0; }
-
-void output_static(int a[][ArrSize], int n, int m) {
-  for (int i = 0; i < n; i++) {
-    for (int j = 0; j < m; j++) {
-      if (j != n)
-        printf("%d ", a[i][j]);
-      else
-        printf("%d", a[i][j]);
-    }
-    if (i != n - 1) printf("\n");
-  }
-}
-int stat(int a[][ArrSize], int *n, int *m) {
-  char symbol;
-  int check = 1;
-  int el;
-  if (scanf("%d %d%c", n, m, &symbol) == 3 && sizeCorrect(*n) &&
-      sizeCorrect(*m) && symbolCorrect(symbol)) {
-    for (int i = 0; i < *n; i++) {
-      for (int j = 0; j < *m; j++) {
-        if (scanf("%d%c", &el, &symbol) && symbolCorrect(symbol)) {
-          a[i][j] = el;
-        } else {
-          check = 0;
-          break;
-        }
-      }
-    }
-  } else {
-    check = 0;
-  }
-  return check;
-}
 
 void output(int **a, int n, int m) {
   for (int i = 0; i < n; i++) {
@@ -182,4 +150,26 @@ int dynamic_var3(int ***a, int *n, int *m, int **val_arr) {
     check = 0;
   }
   return check;
+}
+
+void matrix_sort(int **a, int n, int m) {
+  int min = sum(a, 0, m);
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+      if (sum(a, j, m) > sum(a, i, m)) swap(a, i, j);
+    }
+  }
+}
+
+void swap(int **a, int i, int j) {
+  int *temp = a[i];
+  a[i] = a[j];
+  a[j] = temp;
+}
+int sum(int **a, int i, int m) {
+  int s = 0;
+  for (int j = 0; j < m; j++) {
+    s += a[i][j];
+  }
+  return s;
 }

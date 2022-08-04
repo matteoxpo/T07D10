@@ -182,8 +182,8 @@ int dynamic_var1(int ***a, int *n, int *m) {
   int check = 1;
   if (scanf("%d %d%c", n, m, &symbol) == 3 && sizeCorrect(*n) &&
       sizeCorrect(*m) && symbolCorrect(symbol)) {
-    (*a) = malloc(*n * *m * sizeof(int) + *m * sizeof(int *));
-    int *p = (int *)(*a + *m);
+    (*a) = malloc((*n) * (*m) * sizeof(int) + (*m) * sizeof(int *));
+    int *p = (int *)((*a) + *n);
     for (int i = 0; i < *n; i++) {
       (*a)[i] = p + *m * i;
     }
@@ -199,9 +199,9 @@ int dynamic_var2(int ***a, int *n, int *m) {
 
   if (scanf("%d %d%c", n, m, &symbol) == 3 && sizeCorrect(*n) &&
       sizeCorrect(*m) && symbolCorrect(symbol)) {
-    (*a) = malloc(*m * sizeof(int *));
+    (*a) = malloc(*n * sizeof(int *));
     for (int i = 0; i < *n; i++) {
-      (*a)[i] = malloc(*n * sizeof(int));
+      (*a)[i] = malloc(*m * sizeof(int));
     }
     check = input(a, *n, *m);
   } else {
@@ -215,7 +215,7 @@ int dynamic_var3(int ***a, int *n, int *m, int **val_arr) {
 
   if (scanf("%d %d%c", n, m, &symbol) == 3 && sizeCorrect(*n) &&
       sizeCorrect(*m) && symbolCorrect(symbol)) {
-    (*a) = malloc(*m * sizeof(int *));
+    (*a) = malloc(*n * sizeof(int *));
     (*val_arr) = malloc((*m) * (*n) * sizeof(int));
     for (int i = 0; i < *n; i++) (*a)[i] = *val_arr + (*m) * i;
     check = input(a, *n, *m);
