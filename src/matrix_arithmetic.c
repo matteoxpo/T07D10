@@ -163,7 +163,6 @@ int mul(int **a, int **b, int n1, int m1, int n2, int m2, int ***res) {
 }
 
 int transp(int **a, int n, int m, int ***res) {
-  int check = 1;
   dynamic(res, m, n);
   for (int i = 0; i < n; i++) {
     for (int j = 0; j < m; j++) {
